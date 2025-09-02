@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KOOTA MAHAJAGATHU SALIGRAMA MUMBAI</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body style="background-color: #f9f6ee;">
+  <!-- <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.png" alt="Temple Logo" width="90" height="80" class="me-2">
+        <span class="fw-bold temple-title">KOOTA MAHAJAGATHU SALIGRAMA MUMBAI</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Donation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Magazine</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+<nav class="navbar custom-navbar">
+  <div class="container d-flex flex-column align-items-center">
+    <div class="d-flex align-items-center justify-content-center mb-3 gap-3 navbar-header-row">
+      <img src="logo.png" alt="Temple Logo" width="90" height="80">
+      <span class="fw-bold temple-title">KOOTA MAHAJAGATHU SALIGRAMA MUMBAI</span>
+    </div>
+    <div class="d-lg-none w-100 text-center mb-2">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-center d-lg-none w-100" id="navbarNav">
+      <ul class="navbar-nav flex-column align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#" data-section="home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="members">Members</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="donation">Donation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="magazine">Magazine</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="d-none d-lg-flex w-100 justify-content-center">
+      <ul class="navbar-nav flex-row align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#" data-section="home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="members">Members</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="donation">Donation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="magazine">Magazine</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-section="blog">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Sections -->
+<section id="home" class="nav-section container my-4">
+  <div id="templeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="temple1.png" class="d-block w-100 main-image" alt="Temple Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="temple2.png" class="d-block w-100 main-image" alt="Temple Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="temple1.png" class="d-block w-100 main-image" alt="Temple Image 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#templeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#templeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+</section>
+
+<section id="members" class="nav-section container my-4" style="display:none;">
+  <h2 class="mb-4 text-center">Members</h2>
+  <div id="membersRow" class="row g-4 justify-content-center">
+    <!-- Members will be rendered here by JS -->
+  </div>
+</section>
+
+<section id="donation" class="nav-section container my-4" style="display:none;">
+  <h2>Donation</h2>
+  <p>Donation section content...</p>
+</section>
+
+<section id="gallery" class="nav-section container my-5" style="display:none;">
+  <h2 class="mb-4 text-center">Gallery</h2>
+  <div id="galleryRow" class="row g-3"></div>
+  <div class="text-center mt-3">
+    <button id="showMoreBtn" class="btn btn-primary">Show More</button>
+  </div>
+</section>
+
+<section id="magazine" class="nav-section container my-4" style="display:none;">
+  <h2>Magazine</h2>
+  <p>Magazine section content...</p>
+</section>
+
+<section id="contact" class="nav-section container my-4" style="display:none;">
+  <h2>Contact</h2>
+  <p>Contact section content...</p>
+</section>
+
+<section id="blog" class="nav-section container my-4" style="display:none;">
+  <h2>Blog</h2>
+  <p>Blog section content...</p>
+</section>
+
+
+  <!-- <section class="container my-5">
+  <h2 class="mb-4 text-center">Gallery</h2>
+  <div id="galleryRow" class="row g-3">
+  </div>
+  <div class="text-center mt-3">
+    <button id="showMoreBtn" class="btn btn-primary">Show More</button>
+  </div>
+</section> -->
+
+  <footer class="bg-light text-center py-3">
+    <small>&copy; 2025 KOOTA MAHAJAGATHU SALIGRAMA MUMBAI. All rights reserved.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <audio id="bgMusic" src="stotram.mp3" loop></audio>
+</body>
+</html>
