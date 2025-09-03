@@ -70,7 +70,7 @@
 </nav>
 
   <!-- Sections -->
-<section id="home" class="nav-section container my-5">
+<section id="home" class="nav-section container my-5rem">
   <div id="templeCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -92,19 +92,19 @@
     </div>
 </section>
 
-<section id="members" class="nav-section container my-5" style="display:none;">
+<section id="members" class="nav-section container my-5rem" style="display:none;">
   <h2 class="mb-4 text-center">Members</h2>
   <div id="membersRow" class="row g-4 justify-content-center">
     <!-- Members will be rendered here by JS -->
   </div>
 </section>
 
-<section id="donation" class="nav-section container my-5" style="display:none;">
+<section id="donation" class="nav-section container my-5rem" style="display:none;">
   <h2>Donation</h2>
   <p>Donation section content...</p>
 </section>
 
-<section id="gallery" class="nav-section container my-5" style="display:none;">
+<section id="gallery" class="nav-section container my-5rem" style="display:none;">
   <h2 class="mb-4 text-center">Gallery</h2>
   <div id="galleryRow" class="row g-3"></div>
   <div class="text-center mt-3">
@@ -112,23 +112,40 @@
   </div>
 </section>
 
-<section id="magazine" class="nav-section container my-5" style="display:none;">
-  <h2>Magazine</h2>
-  <p>Magazine section content...</p>
+<section id="magazine" class="nav-section container my-5rem" style="display:none;">
+  <h2 class="mb-4 text-center">Magazine</h2>
+  <div id="magazineList" class="row g-4 justify-content-center">
+    <!-- PDF cards will be rendered here by JS -->
+  </div>
 </section>
 
-<section id="contact" class="nav-section container my-5" style="display:none;">
+<!-- PDF Modal -->
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="height:80vh; overflow:auto;">
+        <iframe id="pdfViewer" src="" width="100%" height="100%" style="border:none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="contact" class="nav-section container my-5rem" style="display:none;">
   <h2>Contact</h2>
   <p>Contact section content...</p>
 </section>
 
-<section id="blog" class="nav-section container my-5" style="display:none;">
+<section id="blog" class="nav-section container my-5rem" style="display:none;">
   <h2>Blog</h2>
   <p>Blog section content...</p>
 </section>
 
 
-  <!-- <section class="container my-5">
+  <!-- <section class="container my-5rem">
   <h2 class="mb-4 text-center">Gallery</h2>
   <div id="galleryRow" class="row g-3">
   </div>

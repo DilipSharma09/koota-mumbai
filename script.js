@@ -1,3 +1,5 @@
+let itemsToShow = 4;
+
 const galleryItems = [
     { type: 'image', src: 'temple1.png', alt: 'Image 1' },
     { type: 'image', src: 'temple2.png', alt: 'Image 2' },
@@ -101,7 +103,146 @@ const membersList = [
     },
 ];
 
-let itemsToShow = 4;
+const magazinePDFs = [
+    {
+        name: "Koota Magazine",
+        month: "January - March",
+        year: "2025",
+        file: "./images/magazine/Jan-Mar_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "April - June",
+        year: "2025",
+        file: "./images/magazine/Apr-Jun_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "July - September",
+        year: "2025",
+        file: "./images/magazine/Jul-Sep_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "January - March",
+        year: "2025",
+        file: "./images/magazine/Jan-Mar_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "April - June",
+        year: "2025",
+        file: "./images/magazine/Apr-Jun_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "July - September",
+        year: "2025",
+        file: "./images/magazine/Jul-Sep_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "January - March",
+        year: "2025",
+        file: "./images/magazine/Jan-Mar_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "April - June",
+        year: "2025",
+        file: "./images/magazine/Apr-Jun_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "July - September",
+        year: "2025",
+        file: "./images/magazine/Jul-Sep_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "January - March",
+        year: "2025",
+        file: "./images/magazine/Jan-Mar_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "April - June",
+        year: "2025",
+        file: "./images/magazine/Apr-Jun_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "July - September",
+        year: "2025",
+        file: "./images/magazine/Jul-Sep_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "January - March",
+        year: "2025",
+        file: "./images/magazine/Jan-Mar_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "April - June",
+        year: "2025",
+        file: "./images/magazine/Apr-Jun_2025.pdf"
+    },
+    {
+        name: "Koota Magazine",
+        month: "July - September",
+        year: "2025",
+        file: "./images/magazine/Jul-Sep_2025.pdf"
+    }
+];
+
+// Render Magazine PDF cards
+// ...existing code...
+function renderMagazineList() {
+    const container = document.getElementById('magazineList');
+    container.innerHTML = '';
+    magazinePDFs.forEach((pdf, idx) => {
+        const col = document.createElement('div');
+        col.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
+        col.innerHTML = `
+      <div class="magazine-card" tabindex="0">
+        <div class="magazine-title">${pdf.name}</div>
+        <div class="magazine-date">${pdf.month} ${pdf.year}</div>
+        <div class="magazine-actions">
+          <button class="magazine-action-btn" title="View" onclick="viewPDF('${pdf.file}', '${pdf.name} - ${pdf.month} ${pdf.year}')">
+            <i class="bi bi-eye"></i>
+          </button>
+          <a class="magazine-action-btn" title="Download" href="${pdf.file}" download target="_blank" rel="noopener">
+            <i class="bi bi-download"></i>
+          </a>
+        </div>
+      </div>
+    `;
+        container.appendChild(col);
+    });
+}
+// ...existing code...
+
+// View PDF in Modal
+window.viewPDF = function (file, title) {
+    document.getElementById('pdfViewer').src = file;
+    document.getElementById('pdfModalLabel').textContent = title;
+    const modal = new bootstrap.Modal(document.getElementById('pdfModal'));
+    modal.show();
+};
+
+// Show Magazine section when nav clicked
+document.querySelectorAll('[data-section]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('data-section');
+        document.querySelectorAll('.nav-section').forEach(sec => sec.style.display = 'none');
+        document.getElementById(sectionId).style.display = '';
+        if (sectionId === 'magazine') renderMagazineList();
+    });
+});
+
+// ...existing code...
 
 function renderMembers() {
     const membersRow = document.getElementById('membersRow');
