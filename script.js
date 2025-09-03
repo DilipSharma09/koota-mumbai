@@ -42,59 +42,65 @@ const galleryItems = [
     // Add more items as needed
 ];
 
+// ...existing code...
 const membersList = [
     {
-        name: "Ramesh Saligrama",
-        image: "logo.png", // Place this image in your project folder
+        name: "A. Harsha Rao",
+        image: "images/members/hrao.png",
         details: "President<br>Contact: 9876543210"
     },
     {
-        name: "Suresh Rao",
-        image: "logo.png", // Place this image in your project folder
-        details: "Secretary<br>Contact: 9123456780"
+        name: "P. Nagesh Rao",
+        image: "images/members/pnrao.png",
+        details: "Hon. President<br>Contact: 9123456780"
     },
     {
-        name: "Ramesh Saligrama",
-        image: "logo.png", // Place this image in your project folder
-        details: "President<br>Contact: 9876543210"
+        name: "Ravi Rao",
+        image: "images/members/ravirao.png",
+        details: "Secretary<br>Contact: 9876543210"
     },
     {
-        name: "Suresh Rao",
-        image: "logo.png", // Place this image in your project folder
-        details: "Secretary<br>Contact: 9123456780"
+        name: "Ashok Karanth",
+        image: "images/members/ashok.png",
+        details: "Treasurer<br>Contact: 9123456780"
     },
     {
-        name: "Ramesh Saligrama",
-        image: "logo.png", // Place this image in your project folder
-        details: "President<br>Contact: 9876543210"
+        name: "Rohini Bairi",
+        image: "images/members/rohini.png",
+        details: "President Mahila Vedike<br>Contact: 9876543210"
     },
     {
-        name: "Suresh Rao",
-        image: "logo.png", // Place this image in your project folder
-        details: "Secretary<br>Contact: 9123456780"
+        name: "Geeta Herela",
+        image: "images/members/geetha.png",
+        details: "Secretary Mahila Vedike<br>Contact: 9123456780"
     },
     {
-        name: "Ramesh Saligrama",
-        image: "logo.png", // Place this image in your project folder
-        details: "President<br>Contact: 9876543210"
+        name: "Vidya Mayya",
+        image: "images/members/vidya.png",
+        details: "Treasurer Mahila Vedike<br>Contact: 9876543210"
     },
     {
-        name: "Suresh Rao",
-        image: "logo.png", // Place this image in your project folder
-        details: "Secretary<br>Contact: 9123456780"
+        name: "Dinesh K. Rao",
+        image: "images/members/dinesh.png",
+        details: "Jt. Treasurer<br>Contact: 9123456780"
     },
     {
-        name: "Ramesh Saligrama",
-        image: "logo.png", // Place this image in your project folder
-        details: "President<br>Contact: 9876543210"
+        name: "Raghavendra Navada",
+        image: "images/members/raghavendra.png",
+        details: "Member<br>Contact: 9876543210"
     },
     {
-        name: "Suresh Rao",
-        image: "logo.png", // Place this image in your project folder
-        details: "Secretary<br>Contact: 9123456780"
+        name: "Vasudeva karanth",
+        image: "images/members/vasudeva.png",
+        details: "Member<br>Contact: 9123456780"
     },
-    // Add more members as needed
+    {
+        name: "Ravi Karanth",
+        image: "images/members/ravik.png",
+        details: "Co-optd. Member<br>Contact: 9123456780"
+    },
 ];
+
 let itemsToShow = 4;
 
 function renderMembers() {
