@@ -135,8 +135,93 @@
 </div>
 
 <section id="contact" class="nav-section container my-5rem" style="display:none;">
-  <h2>Contact</h2>
-  <p>Contact section content...</p>
+  <div class="row g-4 align-items-start">
+    <!-- Address & Contact -->
+    <div class="col-12 col-lg-5">
+      <h2 class="mb-3">Address</h2>
+      <p>Sri Srinivasa Saligrama Devasthanam Trust<br>
+        Ramohalli, Mysore Road,<br>
+        Bangalore 560074
+      </p>
+      <h3 class="mb-2 mt-4">Contact</h3>
+      <p>
+        <a href="mailto:info@saligrama.org">info@saligrama.org</a><br>
+        <span>+91 636-692-1069</span><br>
+        <span>+91 636-692-1071</span><br>
+        <span>+91 953-882-7779</span>
+      </p>
+      <!-- Google Map -->
+      <!-- <div class="map-responsive mb-3">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.236073964479!2d77.43837031482144!3d12.90069799089386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f2e6e7e7e7f%3A0x6e7e7e7e7e7e7e7e!2sSri%20Srinivasa%20Saligrama%20Devasthanam!5e0!3m2!1sen!2sin!4v1660000000000!5m2!1sen!2sin"
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="mt-2">
+          <a href="https://www.google.com/maps/place/Sri+Srinivasa+Saligrama+Devasthanam/@12.9006979,77.4383703,17z" target="_blank" rel="noopener" class="map-link">
+            Sri Srinivasa Saligrama Devasthanam Directions
+          </a>
+        </div>
+      </div> -->
+      <div class="map-responsive mb-3">
+  <iframe
+    src="https://www.google.com/maps?q=Sri+Srinivasa+Saligrama+Devasthanam+Trust,+Ramohalli,+Mysore+Road,+Bangalore+560074&hl=en&z=16&output=embed"
+    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="mt-2">
+    <a href="https://www.google.com/maps/search/?api=1&query=Sri+Srinivasa+Saligrama+Devasthanam+Trust,+Ramohalli,+Mysore+Road,+Bangalore+560074"
+       target="_blank" rel="noopener" class="map-link">
+      Sri Srinivasa Saligrama Devasthanam Directions
+    </a>
+  </div>
+</div>
+    </div>
+    <!-- Query Form -->
+    <div class="col-12 col-lg-7">
+      <h2 class="mb-3 text-center">For any query</h2>
+      <form id="contactForm" novalidate>
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <label class="form-label">First Name *</label>
+            <input type="text" class="form-control" name="firstName" required>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label">Last Name *</label>
+            <input type="text" class="form-control" name="lastName" required>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label">Email *</label>
+            <input type="email" class="form-control" name="email" required>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-control" name="phone">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" name="address">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-control" name="subject">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Type your message here...</label>
+            <textarea class="form-control" name="message" rows="3" required></textarea>
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary px-5">Submit</button>
+        </div>
+        <div id="formSuccess" class="text-success mt-3" style="display:none;">Your query has been sent successfully!</div>
+        <div id="formError" class="text-danger mt-3" style="display:none;">Failed to send. Please try again later.</div>
+      </form>
+    </div>
+  </div>
 </section>
 
 <section id="blog" class="nav-section container my-5rem" style="display:none;">
@@ -159,6 +244,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="script.js"></script>
   <audio id="bgMusic" src="stotram.mp3" loop></audio>
 </body>

@@ -391,3 +391,65 @@ window.addEventListener('DOMContentLoaded', () => {
 //         }
 //     });
 // });
+
+
+// ...existing code...
+
+// EmailJS integration (https://www.emailjs.com/)
+// 1. Sign up at emailjs.com and get your USER_ID and SERVICE_ID and TEMPLATE_ID
+// 2. Add their CDN to your index.html: <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+// 3. Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', 'YOUR_USER_ID' below
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.emailjs) {
+        emailjs.init('YOUR_USER_ID');
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let valid = true;
+            let formData = {};
+            // Validate fields
+            contactForm.querySelectorAll('input, textarea').forEach(field => {
+                const feedback = field.nextElementSibling;
+                feedback.textContent = '';
+                if (field.hasAttribute('required') && !field.value.trim()) {
+                    feedback.textContent = 'This field is required.';
+                    valid = false;
+                }
+                if (field.name === 'email' && field.value) {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(field.value)) {
+                        feedback.textContent = 'Enter a valid email.';
+                        valid = false;
+                    }
+                }
+                formData[field.name] = field.value.trim();
+            });
+
+            if (!valid) return;
+
+            // Send email via EmailJS
+            if (window.emailjs) {
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                    to_email: 'dilipkumar.1.s@gmail.com',
+                    ...formData
+                }).then(function () {
+                    document.getElementById('formSuccess').style.display = 'block';
+                    document.getElementById('formError').style.display = 'none';
+                    contactForm.reset();
+                }, function () {
+                    document.getElementById('formSuccess').style.display = 'none';
+                    document.getElementById('formError').style.display = 'block';
+                });
+            } else {
+                document.getElementById('formError').textContent = 'EmailJS not loaded. Please check setup.';
+                document.getElementById('formError').style.display = 'block';
+            }
+        });
+    }
+});
+
+// ...existing code...
