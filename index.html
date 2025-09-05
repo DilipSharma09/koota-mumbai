@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body style="background-color: #f9f6ee;">
+  <!-- Google Translate Widget -->
+
   <!-- <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
@@ -37,7 +39,7 @@
   <div class="container d-flex flex-column align-items-center">
     <div class="d-flex align-items-center justify-content-center mb-3 gap-3 navbar-header-row">
       <img src="logo.png" alt="Temple Logo" width="90" height="80">
-      <span class="fw-bold temple-title">KOOTA MAHAJAGATHU SALIGRAMA MUMBAI</span>
+      <span data-translate="KOOTA MAHAJAGATHU SALIGRAMA MUMBAI" class="fw-bold temple-title">KOOTA MAHAJAGATHU SALIGRAMA MUMBAI</span>
     </div>
     <div class="d-lg-none w-100 text-center mb-2">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -68,6 +70,13 @@
     </div>
   </div>
 </nav>
+<!-- <div id="google_translate_element" class="language-switcher position-absolute top-0 end-0 p-3"></div> -->
+<!-- Place this after your navbar -->
+<div id="langToggleWrapper" class="language-switcher position-absolute top-0 end-0 p-3">
+  <button id="langToggleBtn" class="btn btn-outline-primary rounded-pill px-4 fw-bold shadow-sm">
+    <i class="bi bi-translate me-2"></i> ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ
+  </button>
+</div>
 
   <!-- Sections -->
 <section id="home" class="nav-section container my-5rem">
@@ -99,9 +108,118 @@
   </div>
 </section>
 
+<!-- <section id="donation" class="nav-section container my-5rem" style="display:none;">
+<div class="text-center">
+  <h3>Support Us with Your Donation</h3>
+  <p>Your contribution helps us serve the community.</p> -->
+  <!-- <form action="https://www.paypal.com/donate" method="post" target="_blank">
+    <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID" />
+    <button type="submit" class="btn btn-primary">
+      <i class="bi bi-paypal"></i> Donate with PayPal
+    </button>
+  </form> -->
+  <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="6Z8NF24RF7TM4" />
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+</div>
+</section> -->
+
 <section id="donation" class="nav-section container my-5rem" style="display:none;">
-  <h2>Donation</h2>
-  <p>Donation section content...</p>
+  <div class="row g-4 align-items-start">
+    <!-- Left Column: How we use your donation -->
+    <div class="col-12 col-lg-6">
+      <h3 class="mb-4 text-center">How we use your donation</h3>
+      <div class="donation-usage-list">
+        <div class="donation-usage-item mb-4 text-center">
+          <div class="fw-bold mb-2">Children Scholarship</div>
+          <img src="images/donation/scholarship.png" alt="Children Scholarship" class="img-fluid rounded mb-2" >
+          <div class="small text-muted">Supporting education for underprivileged children.</div>
+        </div>
+        <div class="donation-usage-item mb-4 text-center">
+          <div class="fw-bold mb-2">God Pooja</div>
+          <img src="images/donation/puja.png" alt="God Pooja" class="img-fluid rounded mb-2" >
+          <div class="small text-muted">Organizing regular poojas and rituals at the temple.</div>
+        </div>
+        <div class="donation-usage-item mb-4 text-center">
+          <div class="fw-bold mb-2">Picnic Gathering with Members</div>
+          <img src="images/donation/tradition.jpg" alt="Picnic Gathering" class="img-fluid rounded mb-2" >
+          <div class="small text-muted">Community picnics and gatherings for members.</div>
+        </div>
+        <div class="donation-usage-item mb-4 text-center">
+          <div class="fw-bold mb-2">Keep Our Culture Alive</div>
+          <img src="images/donation/scholarship.png" alt="Keep Our Culture Alive" class="img-fluid rounded mb-2" >
+          <div class="small text-muted">Preserving and promoting our traditions and culture.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Right Column: Donation Form -->
+    <div class="col-12 col-lg-6">
+      <!-- <div class="text-center">
+        <h3 class="mb-4">Support Us with Your Donation</h3>
+        <p>Your contribution helps us serve the community.</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="6Z8NF24RF7TM4" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate Now" />
+        </form>
+      </div> -->
+      <!-- ...existing code... -->
+<div class="text-center">
+  <h3 class="mb-4">Support Us with Your Donation</h3>
+  <p>Your contribution helps us serve the community.</p>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick" />
+    <input type="hidden" name="hosted_button_id" value="6Z8NF24RF7TM4" />
+    <input type="hidden" name="currency_code" value="USD" />
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate Now" />
+  </form>
+
+  <!-- Stylish Impact Section -->
+  <div class="impact-card mt-5 p-4 mx-auto">
+    <h5 class="mb-4 fw-bold text-primary"><i class="bi bi-stars me-2"></i>Your Impact</h5>
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-md-12">
+        <div class="impact-item d-flex align-items-center mb-3">
+          <span class="impact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+            <i class="bi bi-people"></i>
+          </span>
+          <span><strong>500+</strong> children supported</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-12">
+        <div class="impact-item d-flex align-items-center mb-3">
+          <span class="impact-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+            <i class="bi bi-calendar-heart"></i>
+          </span>
+          <span><strong>100+</strong> poojas performed</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-12">
+        <div class="impact-item d-flex align-items-center mb-3">
+          <span class="impact-icon bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+            <i class="bi bi-person-lines-fill"></i>
+          </span>
+          <span><strong>300+</strong> active members</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-12">
+        <div class="impact-item d-flex align-items-center mb-3">
+          <span class="impact-icon bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+            <i class="bi bi-award"></i>
+          </span>
+          <span><strong>25</strong> years of service</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ...existing code... -->
+    </div>
+  </div>
 </section>
 
 <section id="gallery" class="nav-section container my-5rem" style="display:none;">
@@ -243,9 +361,12 @@
     <small>&copy; 2025 KOOTA MAHAJAGATHU SALIGRAMA MUMBAI. All rights reserved.</small>
   </footer>
 
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="script.js"></script>
+<!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+  
   <audio id="bgMusic" src="stotram.mp3" loop></audio>
 </body>
 </html>

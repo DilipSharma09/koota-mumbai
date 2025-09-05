@@ -196,6 +196,73 @@ const magazinePDFs = [
     }
 ];
 
+const translations = {
+    kn: {
+        "KOOTA MAHAJAGATHU SALIGRAMA MUMBAI": "ಕೂಟ ಮಹಾಜಗತ್ತು ಸಾಲಿಗ್ರಾಮ ಮುಂಬೈ",
+        home: "ಮುಖಪುಟ",
+        members: "ಸದಸ್ಯರು",
+        donation: "ದಾನ",
+        gallery: "ಗ್ಯಾಲರಿ",
+        magazine: "ಮ್ಯಾಗಜಿನ್",
+        contact: "ಸಂಪರ್ಕ",
+        blog: "ಬ್ಲಾಗ್",
+        "How we use your donation": "ನಿಮ್ಮ ದಾನವನ್ನು ನಾವು ಹೇಗೆ ಬಳಸುತ್ತೇವೆ",
+        "Children Scholarship": "ಮಕ್ಕಳ ವಿದ್ಯಾರ್ಥಿವೇತನ",
+        "Supporting education for underprivileged children.": "ಹಿಂದುಳಿದ ಮಕ್ಕಳ ಶಿಕ್ಷಣವನ್ನು ಬೆಂಬಲಿಸುವುದು.",
+        "God Pooja": "ದೇವರ ಪೂಜೆ",
+        "Organizing regular poojas and rituals at the temple.": "ಮಂದಿರದಲ್ಲಿ ನಿಯಮಿತ ಪೂಜೆಗಳು ಮತ್ತು ವಿಧಿಗಳನ್ನು ಆಯೋಜಿಸುವುದು.",
+        "Picnic Gathering with Members": "ಸದಸ್ಯರೊಂದಿಗೆ ಪಿಕ್ನಿಕ್",
+        "Community picnics and gatherings for members.": "ಸದಸ್ಯರಿಗಾಗಿ ಸಮುದಾಯ ಪಿಕ್ನಿಕ್ ಮತ್ತು ಸಭೆಗಳು.",
+        "Keep Our Culture Alive": "ನಮ್ಮ ಸಂಸ್ಕೃತಿಯನ್ನು ಜೀವಂತವಾಗಿಡಿ",
+        "Preserving and promoting our traditions and culture.": "ನಮ್ಮ ಪರಂಪರೆ ಮತ್ತು ಸಂಸ್ಕೃತಿಯನ್ನು ಸಂರಕ್ಷಿಸುವುದು ಮತ್ತು ಉತ್ತೇಜಿಸುವುದು.",
+        "Support Us with Your Donation": "ನಿಮ್ಮ ದಾನದೊಂದಿಗೆ ನಮ್ಮನ್ನು ಬೆಂಬಲಿಸಿ",
+        "Your contribution helps us serve the community.": "ನಿಮ್ಮ ಕೊಡುಗೆ ನಮ್ಮನ್ನು ಸಮುದಾಯಕ್ಕೆ ಸೇವೆ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+        "Submit": "ಸಲ್ಲಿಸಿ",
+        "For any query": "ಯಾವುದೇ ಪ್ರಶ್ನೆಗೆ",
+        "First Name *": "ಮೊದಲ ಹೆಸರು *",
+        "Last Name *": "ಕೊನೆಯ ಹೆಸರು *",
+        "Email *": "ಇಮೇಲ್ *",
+        "Phone": "ದೂರವಾಣಿ",
+        "Address": "ವಿಳಾಸ",
+        "Subject": "ವಿಷಯ",
+        "Type your message here...": "ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಇಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ...",
+        "Your Impact": "ನಿಮ್ಮ ಪ್ರಭಾವ",
+        "children supported": "ಮಕ್ಕಳು ಬೆಂಬಲಿಸಲಾಗಿದೆ",
+        "poojas performed": "ಪೂಜೆಗಳು ನಡೆಸಲಾಗಿದೆ",
+        "active members": "ಸಕ್ರಿಯ ಸದಸ್ಯರು",
+        "years of service": "ಸೇವೆಯ ವರ್ಷಗಳು",
+        "Sri Srinivasa Saligrama Devasthanam Directions": "ಶ್ರೀ ಶ್ರೀನಿವಾಸ ಸಾಲಿಗ್ರಾಮ ದೇವಸ್ಥಾನ ದಿಕ್ಕುಗಳು"
+    }
+};
+
+let currentLang = 'en';
+
+function translatePage(lang) {
+    document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        if (lang === 'kn' && translations.kn[key]) {
+            el.textContent = translations.kn[key];
+        } else if (lang === 'en') {
+            // Restore English (use the key as the English text)
+            el.textContent = key.replace(/_/g, ' ');
+        }
+    });
+    currentLang = lang;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('langToggleBtn');
+    btn.addEventListener('click', function () {
+        if (currentLang === 'en') {
+            translatePage('kn');
+            btn.innerHTML = '<i class="bi bi-translate me-2"></i> Translate to English';
+        } else {
+            translatePage('en');
+            btn.innerHTML = '<i class="bi bi-translate me-2"></i> ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ';
+        }
+    });
+});
+
 // Render Magazine PDF cards
 // ...existing code...
 function renderMagazineList() {
@@ -453,3 +520,30 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ...existing code...
+
+// function googleTranslateElementInit() {
+//     new google.translate.TranslateElement({
+//         // pageLanguage: 'en',
+//         includedLanguages: 'en,kn',
+//         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+//     }, 'google_translate_element');
+// }
+
+// function googleTranslateElementInit() {
+//     new google.translate.TranslateElement("google_translate_element");
+// }
+
+    function adjustForTranslateBanner() {
+  // The banner iframe is named 'goog-gt-tt' or has class 'goog-te-banner-frame'
+  const banner = document.querySelector('iframe.goog-te-banner-frame');
+    const header = document.querySelector('.custom-navbar');
+    if (banner && header) {
+        // Banner is present, shift header down
+        header.style.top = '36px';
+  } else if (header) {
+        // Banner not present, reset margin
+        header.style.marginTop = '';
+  }
+}
+
+    setInterval(adjustForTranslateBanner, 500);
